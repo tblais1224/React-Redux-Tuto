@@ -12,17 +12,43 @@
 </head>
 
 <body>
-    
+
     <div id="app"></div>
 
 
     <script type="text/babel">
         class App extends React.Component {
+            state = {
+                name: "Squirtle",
+                lvl: 12
+            }
+
+            handleClick = (e) => {
+                //prints the clicked button
+                //using arrow function lets you call this.something in function
+                //console.log(e.target) 
+                 this.setState({
+                     name: "Charmander",
+                     lvl: 14
+                 })
+                console.log(this.state)
+            }
+            handleMouseOver = (e) => {
+                //prints target and the x coordinate where hover over detected
+                console.log(e.target, e.pageX)
+            }
+            handleCopy = (e) => {
+                console.log("STOP!!! Why are you stealing my data?!?!?!? Injecting SYSTEM MELTDOWN")
+            }
+
             render(){
                 return (
                     <div className="app-content">
-                        <h1>Hey, friends</h1>
-                        <p>{ Math.random() * 10 } </p>
+                        <h1>Hey, everyone!</h1>
+                        <p>My Pokemon is: { this.state.name } and he is lvl: {this.state.lvl} </p>
+                        <button onClick={this.handleClick} >Click Me</button>
+                        <button onMouseOver={this.handleMouseOver}>Hover Me</button>
+                        <p onCopy={this.handleCopy}>What we think, we become.</p>
                     </div>
                 )
             }

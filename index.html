@@ -15,14 +15,34 @@
     
     <div id="app"></div>
 
-
     <script type="text/babel">
         class App extends React.Component {
+            state = {
+                name: "Pikachu",
+                lvl: 45
+            }
+
+            handleChange = (e) => {
+                this.setState({
+                    name: e.target.value
+                })
+            }
+
+            handleSubmit = (e) => {
+                e.preventDefault();
+                console.log("form submitted new name", this.state.name)
+            }
+
             render(){
                 return (
                     <div className="app-content">
-                        <h1>Hey, friends</h1>
-                        <p>{ Math.random() * 10 } </p>
+                        <h1>Hey, friends!</h1>
+                        <p>My pokemon is a {this.state.name}</p>
+                        {/* default form action will refresh the page*/}
+                        <form onSubmit={this.handleSubmit}>
+                            <input type="text" onChange={this.handleChange} />
+                            <button>submit</button>
+                        </form>
                     </div>
                 )
             }

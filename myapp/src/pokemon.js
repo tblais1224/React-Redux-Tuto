@@ -9,6 +9,7 @@ const Pokemon = ({ pokemon }) => {
                     <div>name: {pokemon.name}</div>
                     <div>lvl: {pokemon.lvl}</div>
                     <div>Move: {pokemon.move}</div>
+                    <br/>
                 </div>
             )
         } else {

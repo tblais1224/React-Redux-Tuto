@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Pokemon from './pokemon';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  state = {
+    pokemon: [
+      { name: "Bulbasaur", lvl: 22, move: 'razor leaf', id: 1 },
+      { name: "Squirtle", lvl: 24, move: 'water gun', id: 2 },
+      { name: "Charmander", lvl: 30, move: 'flamethrower', id: 3 }
+    ]
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <h1>Tom's first React app!!!</h1>
+        <p>Welcome Strangers</p>
+        <Pokemon  pokemon={this.state.pokemon}/>
+
+      </div>
+    );
+  }
 }
 
 export default App;

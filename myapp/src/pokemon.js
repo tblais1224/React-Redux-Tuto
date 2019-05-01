@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Pokemon = ({ pokemon }) => {
+const Pokemon = ({ pokemon, deletePokemon}) => {
     const pokemonList = pokemon.map(pokemon => {
         if (pokemon.lvl > 22 ) {
             return (
@@ -9,6 +9,7 @@ const Pokemon = ({ pokemon }) => {
                     <div>name: {pokemon.name}</div>
                     <div>lvl: {pokemon.lvl}</div>
                     <div>Move: {pokemon.move}</div>
+                    <button onClick={() => {deletePokemon(pokemon.id)}}>Delete Pokemon</button>
                     <br/>
                 </div>
             )
@@ -16,6 +17,7 @@ const Pokemon = ({ pokemon }) => {
             return null
         }
     })
+
     return (
         <div className="pokemon-list">
             {pokemonList}

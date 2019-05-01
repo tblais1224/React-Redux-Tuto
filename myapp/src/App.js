@@ -24,12 +24,24 @@ class App extends Component {
     })
   }
 
+  deletePokemon = (id) => {
+    //.filter takes a callback function that looks at pokemon to check if ids are equal
+    //if match is found returns false therfore deleting through filter
+    let pokemonDeleted = this.state.pokemon.filter(pokemon => {
+      return pokemon.id !== id
+    });
+    
+    this.setState({
+      pokemon: pokemonDeleted
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Tom's first React app!!!</h1>
         <p>Welcome Strangers</p>
-        <Pokemon  pokemon={this.state.pokemon}/>
+        <Pokemon deletePokemon={this.deletePokemon} pokemon={this.state.pokemon}/>
         <AddPokemon addPokemon={this.addPokemon}/>
       </div>
       

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './pokemon.css'
 
 const Pokemon = ({ pokemon, deletePokemon}) => {
     const pokemonList = pokemon.map(pokemon => {

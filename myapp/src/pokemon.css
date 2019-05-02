@@ -1,0 +1,10 @@
+body{
+    background: rgb(219, 59, 59);
+    transition: all 1s;
+}
+
+.pokemon form{
+    background: white;
+    padding: 20px;
+}
+

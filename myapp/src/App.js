@@ -30,7 +30,6 @@ class App extends Component {
     let pokemonDeleted = this.state.pokemon.filter(pokemon => {
       return pokemon.id !== id
     });
-    
     this.setState({
       pokemon: pokemonDeleted
     })

@@ -35,6 +35,15 @@ class App extends Component {
     })
   }
 
+  //lifecycle hooks
+  componentDidMount(){
+    console.log('componentDidMount')
+  }
+  componentDidUpdate(prevProps, prevState){
+    console.log("component updated");
+    console.log(prevProps, prevState)
+  }
+
   render() {
     return (
       <div className="App">
